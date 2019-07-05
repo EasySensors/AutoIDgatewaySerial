@@ -1,4 +1,4 @@
-  /**
+/**
  * The MySensors Arduino library handles the wireless radio link and protocol
  * between your home built sensors/actuators and HA controller of choice.
  * The sensors forms a self healing radio network with optional repeaters. Each
@@ -128,14 +128,6 @@ byte getFreeAddress(){
 
 void setup() {
   // Setup locally attached sensors
-  byte routes[256];
-  hwReadConfigBlock((void*)&routes, (void*)EEPROM_ROUTES_ADDRESS, SIZE_ROUTES);
-  for(int i=0;i<255;i++){
-      Serial.print("ID "); 
-      Serial.print(i); 
-      Serial.print(" "); 
-      Serial.println(routes[i]);
-  }
 }
 
 void presentation() {
@@ -161,47 +153,9 @@ void loop() {
 void receive(const MyMessage &message) { 
 
  if (message.type==I_ID_REQUEST) {
-    Serial.println("rrrrrrrrrrrrrrr");
+    //Serial.println("receive entered flag = true;");
     flag = true;
     reqSensorId = message.sensor; 
  }
 }
 
-
-
-
-
-
-// some debug lines
-   //message.setDestination();//message.sender
-   //mSetCommand(message, C_INTERNAL);
-   //message.setType(I_ID_RESPONSE);
-   //send(message.set(5), false);
-   
- /*
-    Serial.print("COMMAND: ");
-    Serial.println(mGetCommand(msg));
-   wait(100);
-    send(msg); 
-    */  
-   
-    //MyMessage msg;
-
-    //build(msg, 255, 1, C_INTERNAL, I_ID_RESPONSE).set((uint8_t)0x05);
-    
-    
-    /* 
-      Serial.begin(115200);
-  Serial.println("!");
-  pinMode(9,OUTPUT);
-  digitalWrite(9,LOW);
-  wait(10);
-  digitalWrite(9,HIGH);
-  wait(10);
-  digitalWrite(9,LOW);
-  wait(10);
-  */
-  
-    //Serial.print("mem1 ");
-  //Serial.println(sizeof(routingTable_t));
-  
