@@ -63,6 +63,8 @@
 #define   MY_RFM95_FREQUENCY RFM95_868MHZ
 //#define   MY_RFM95_FREQUENCY RFM95_433MHZ
 
+#define MY_RFM69_TX_POWER_DBM (13)
+
 //#define MY_SIGNING_ATSHA204_PIN A2
 
 //#define MY_SIGNING_ATSHA204
@@ -158,4 +160,3 @@ void receive(const MyMessage &message) {
     reqSensorId = message.sensor; 
  }
 }
-
