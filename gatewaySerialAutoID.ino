@@ -39,7 +39,7 @@
 #include <EEPROM.h>
 
 // Enable debug prints to serial monitor
-#define MY_DEBUG
+//#define MY_DEBUG
 //#define MY_DEBUG_VERBOSE_RFM69
 
 // Enable and select radio type attached
